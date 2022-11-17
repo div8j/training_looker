@@ -50,6 +50,7 @@ view: order_items {
     type: number
     value_format: "$#.00;($#.00)"
     sql: ${TABLE}.sale_price ;;
+    hidden: yes
   }
 
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
