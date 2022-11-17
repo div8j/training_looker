@@ -48,6 +48,7 @@ view: order_items {
 
   dimension: sale_price {
     type: number
+    value_format: "$#.00;($#.00)"
     sql: ${TABLE}.sale_price ;;
   }
 
@@ -63,6 +64,12 @@ view: order_items {
   measure: average_sale_price {
     type: average
     sql: ${sale_price} ;;
+  }
+
+  measure: total_revenue {
+    type: sum
+    sql: ${sale_price} ;;
+    value_format_name: usd_0
   }
 
   measure: count {
