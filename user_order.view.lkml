@@ -23,6 +23,7 @@ view: user_order {
 
   dimension: users_id {
     type: number
+    primary_key: yes
     sql: ${TABLE}."users.id" ;;
   }
 
@@ -34,6 +35,12 @@ view: user_order {
   dimension: order_items_total_revenue {
     type: number
     sql: ${TABLE}."order_items.total_revenue" ;;
+  }
+
+  measure: average_revenue {
+    type: average
+    sql: ${order_items_total_revenue} ;;
+    value_format_name: usd
   }
 
   set: detail {
