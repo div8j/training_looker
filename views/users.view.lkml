@@ -37,11 +37,6 @@ view: users {
   }
 
   dimension: city {
-    type: string
-    sql: ${TABLE}.city ;;
-  }
-
-  dimension: city_html {
     group_label: "Location"
     label: "City"
     type: string
