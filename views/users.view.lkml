@@ -41,6 +41,14 @@ view: users {
     sql: ${TABLE}.city ;;
   }
 
+  dimension: city_html {
+    group_label: "Location"
+    label: "City"
+    type: string
+    sql: ${TABLE}.city ;;
+    html: < a href="http://www.google.com/search?q={{value}}"><button>{{value}}</button></a>;;
+  }
+
   dimension: country {
     type: string
     map_layer_name: countries
